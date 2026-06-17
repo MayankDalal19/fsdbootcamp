@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI</title>
+</head>
+<body>
+    <input type="number" id="m" placeholder="enter height in meters">
+    <input type="number" name="" id="kg" placeholder="enter weight in kg">
+    <button onclick="bmiIS()">BMI</button>
+</body>
+</html>
+<script>
+    function bmiIS(){
+        const height=Number(document.querySelector("#m").value);
+        const weight=Number(document.querySelector("#kg").value);
+        let bmi = (weight) / (height * height);
+        alert("Your BMI is : " + bmi)
+        if(bmi<=18.4){
+            alert("underweight-> sukhi haddi")
+        }else if(bmi >= 18.5 && bmi <= 24.9){
+            alert("normal h tu ")
+        }else if(bmi >= 25 && bmi <= 29.9){
+            alert("overweight -> moteeee kam khaya kar")
+        }else{alert("saale obese -->dharti p bojhhh")}
+    }
+</script>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Registration</title>
+</head>
+<body>
+	<input type="text" name="name" id="name">
+	<select id="gender">
+		<option value="">--</option>
+		<option value="male">M</option>
+		<option value="female">F</option>
+	</select>
+	<input type="text" name="email" id="email">
+	<input type="text" name="mobile" id="mobile">
+	<hr>
+	<h1 id="dName"   > NAME</h1>
+	<h2 id="dGender"  >GENDER</h2>
+	<h3 id="dEmail"  > EMAIL</h3>
+	<h4 id="dMobile"  >MOBILE</h4>
+	<hr>
+	<button onclick="showName()">NAME</button>
+	<button onclick="showGender()">GENDER</button>
+	<button onclick="showEmail()">EMAIL</button>
+	<button onclick="showMobile()">MOBILE</button>
+	<button onclick="resetForm()">RESET FORM</button>
+	<button onclick="resetDisplay()">RESET DISPLAY</button>
+	<script type="text/javascript">
+		function showName() {
+			// Show filled name inside h1
+            const name=document.querySelector("#name").value;
+            // console.log(name)
+            const nChange=document.querySelector("h1");
+            nChange.innerText=name
+
+            
+
+		}
+
+		function showGender() {
+			// Show the selected gender inside h2
+            const gender=document.querySelector("#gender").value;
+            // console.log(name)
+            const gChange=document.querySelector("h2");
+            gChange.innerText=gender
+		}
+
+		function showEmail() {
+			// Show the filled email inside h3
+            const email=document.querySelector("#email").value;
+            // console.log(name)
+            const eChange=document.querySelector("h3");
+            eChange.innerText=email
+		}
+
+		function showMobile() {
+			// Show the filled mobile inside h4
+            const mobile=document.querySelector("#mobile").value;
+            // console.log(name)
+            const mChange=document.querySelector("h4");
+            mChange.innerText=mobile
+		}
+
+		function resetForm() {
+            
+			// Reset all the form elements to default values (blank "")
+            const form=document.querySelector("#name");
+            const form1=document.querySelector("#gender");
+            const form2=document.querySelector("#email");
+            const form3=document.querySelector("#mobile");
+
+            form.value="";
+            form1.value="";
+            form2.value="";
+            form3.value="";
+
+		}
+
+        function resetDisplay() {
+            const reset = document.querySelector("h1");
+            const reset1 = document.querySelector("h2");
+            const reset2 = document.querySelector("h3");
+            const reset3 = document.querySelector("h4");
+
+            reset.innerText = "";
+            reset1.innerText = "";
+            reset2.innerText = "";
+            reset3.innerText = "";
+}
+	</script>
+</body>
+</html>

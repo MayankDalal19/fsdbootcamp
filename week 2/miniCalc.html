@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini calculator</title>
+    <style>
+        div{
+            width: 400px;
+            margin: auto;
+        }
+        #div2{
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        #div1{
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div id="div1">
+        <input type="number" id="ip1" placeholder="enter number 1">
+        <input type="number" id="ip2" placeholder="enter number 2">
+    </div>
+    <br><br>
+    <div id="div2">
+        <button id="add" onclick="add1()">ADD</button>
+        <button id="sub" onclick="sub1()">SUBTRACT</button>
+        <button id="mul" onclick="mul1()">MULTIPLY</button>
+        <button id="div" onclick="divi()">DIVIDE</button>
+    </div>
+    </div>
+
+    
+</body>
+</html>
+<script>
+    function add1(){
+        const add=Number(document.querySelector("#ip1").value);
+        const add2=Number(document.querySelector("#ip2").value);
+        alert(add + add2)
+        
+
+    }
+
+    function sub1(){
+        const add=Number(document.querySelector("#ip1").value);
+        const add2=Number(document.querySelector("#ip2").value);
+        alert(add - add2)
+        
+    }
+
+    function mul1(){
+        const add=Number(document.querySelector("#ip1").value);
+        const add2=Number(document.querySelector("#ip2").value);
+        alert(add * add2)
+        
+    }
+
+    function divi(){
+        const add=Number(document.querySelector("#ip1").value);
+        const add2=Number(document.querySelector("#ip2").value);
+        alert(add / add2)
+        
+    }
+</script>
