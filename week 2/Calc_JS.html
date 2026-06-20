@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cont{
+            background-color: rgb(255, 255, 255);
+            display: flex;
+            flex-direction: column;
+            
+            
+            width: 250px;
+
+            padding: 20px;
+            gap: 30px;
+            margin: auto;
+            
+            border-radius: 30px;
+            box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            
+
+            
+            
+        }
+        .div1, .red, .black {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+        .div1{
+            background-color: rgb(255, 255, 255);
+            font-size: x-large;
+            font-weight: bolder;
+            text-align: center;
+
+            
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            
+            
+        }
+        .red{
+            color: white;
+            background-color: red;
+            font-size: x-large;
+            font-weight: bolder;
+            
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            
+            
+        }
+        .black{
+            background-color: black;
+            color: white;
+            font-size: x-large;
+            font-weight: bolder;
+            
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+            
+            
+        }
+        #keyboard{
+            display: grid;
+            grid-template-rows: repeat(4,50px);
+            grid-template-columns: repeat(4,50px);
+            gap: 10px;
+            
+            border-radius: 5px;
+            text-align: center;
+            
+            margin: auto;
+            margin: 15px auto;
+            
+        }
+        #input{
+            background-color: rgb(255, 255, 255);
+            /* border: 1px solid red; */
+            border-radius: 7px;
+            
+            width: auto;
+            height: 35px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            
+            padding:5px 10px;
+            
+        }
+        .same:hover{
+            background-color: green;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+
+        <div id="input"></div>
+        <div id="keyboard">
+            <div class="same div1" >1</div>
+            <div class="same div1" >2</div>
+            <div class="same div1" >3</div>
+            <div class="same black" >+</div>
+            <div class="same div1" >4</div>
+            <div class="same div1" >5</div>
+            <div class="same div1" >6</div>
+            <div class="same black" >-</div>
+            <div class="same div1" >7</div>
+            <div class="same div1" >8</div>
+            <div class="same div1" >9</div>
+            <div class="same black">*</div>
+            <div class="same red" >C</div>
+            <div class="same div1" >0</div>
+            <div class="same black" >=</div>
+            <div class="same black">/</div>
+        </div>
+
+
+    </div>
+
+    
+</body>
+</html>
+<script>
+    // select/catch elemets
+    const keys=document.querySelectorAll("#keyboard>div");
+    // console.log(keys)
+    let bag="";
+
+    // step2 -attach event
+    for(let i=0;i<keys.length;i++){
+        // console.log(keys[i])
+        keys[i].addEventListener("click",myCal)
+    }
+
+    // step3 - handle event
+    function myCal(e){
+        
+        let targetNum=e.target.innerText;
+        // console.log(e.target.innerText)
+        // console.log(targetNum)
+        const display= document.querySelector("#input");
+        // display.innerText=targetNum;
+        if (targetNum=="C"){
+            bag=" ";
+            display.innerText=bag;
+
+        }else if(targetNum=="="){
+            let ans=eval(bag);
+            display.innerText=ans;
+        }else{
+            bag+=targetNum;
+            display.innerText=bag;
+        }
+    }
+
+</script>
